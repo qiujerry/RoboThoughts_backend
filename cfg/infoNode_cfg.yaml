@@ -1,0 +1,4 @@
+# infoNode_cfg.yml
+# This file defines the topics that infoNode.py wants to subsribe to
+
+depth_topic: /status/controls/depth
