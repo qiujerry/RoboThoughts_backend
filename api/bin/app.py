@@ -9,10 +9,24 @@ def respond():
         abort(400)
     output = []
     for json_input in request.json['request']:
-        if json_input['data'] == 'depth':
-            output.append({'depth_value' : 50})
-        if json_input['data'] == 'velocity':
-            output.append({'velocity_value' : 100})
+        if json_input['data'] == 'AcousticsCommand':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            out.put.append({'filename' : 'String'})
+        if json_input['data'] == 'AcousticsStatus':
+            output.append({'PFPADiff' : 100})
+            output.append({'PFSFDiff' : 100})
+            output.append({'Angle' : 100})
+        if json_input['data'] == 'AlignmentCommand':
+            output.append({'object' : 'String'})
+            output.append({'width_ratio' : 100})
+        if json_input['data'] == 'AttitudeCommand':
+            output.append({'value' : 100})
+            output.append({'node' : 100})
+        if json_input['data'] == 'CalibrateAlignment':
+            output.append({'surge_active' : true})
+            output.append({'PFSFDiff' : 100})
+            output.append({'Angle' : 100})
     return jsonify({'data' : output}), 201
 
 @app.errorhandler(400)
