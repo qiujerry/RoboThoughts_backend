@@ -34,4 +34,4 @@ def invalid(error):
     return make_response(jsonify({'error':'Invalid JSON Request'}), 400)
 
 if __name__ == '__main__':
-    app.run(host='172.31.109.150', port=5000)
+    app.run(host='0.0.0.0', port=5000)
