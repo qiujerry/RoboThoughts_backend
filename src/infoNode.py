@@ -6,6 +6,7 @@ import rospy
 import rospkg
 import yaml
 from riptide_msgs.msg import ControlStatus
+from riptide_msgs.msg import Depth
 
 rpack = rospkg.RosPack()
 config_path = rpack.get_path('RoboThoughts') + "backend/src/cfg/infoNode_cfg.yml"
@@ -13,8 +14,10 @@ pubs = {}
 cfg = {}
 
 def depth_callback(msg):
-    depth = msg.current
-
+    depth = msg.depth
+    pressure = msg.pressure
+    temp = msg.temp
+    altitude = msg.altitude
 
 def loadConfig():
     global cfg
