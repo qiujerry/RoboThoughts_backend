@@ -1,0 +1,5 @@
+<launch>
+
+    <node name="infoNode" pkg="RoboThoughts_backend" type="infoNode.py"/>
+
+</launch>
