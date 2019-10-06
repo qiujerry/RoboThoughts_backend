@@ -9,7 +9,7 @@ from riptide_msgs.msg import ControlStatus
 from riptide_msgs.msg import Depth
 
 rpack = rospkg.RosPack()
-config_path = rpack.get_path('RoboThoughts') + "backend/src/cfg/infoNode_cfg.yml"
+config_path = rpack.get_path('riptide_robothoughts') + "/cfg/infoNode_cfg.yaml"
 pubs = {}
 cfg = {}
 

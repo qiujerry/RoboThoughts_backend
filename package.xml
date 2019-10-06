@@ -49,7 +49,22 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>roslint</build_depend>
+  <build_depend>riptide_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
 
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>smach</exec_depend>
+  <exec_depend>smach_ros</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>riptide_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
