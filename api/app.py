@@ -10,34 +10,55 @@ def respond():
     output = []
     for json_input in request.json['request']:
         if json_input['data'] == 'Controls_Depth':
-            output.append({'reference' : 50})
-            output.append({'current' : 50})
-            output.append({'error' : 1})
+            arr = []
+            arr.append({'reference' : 50})
+            arr.append({'current' : 50})
+            arr.append({'error' : 1})
+            output.append({'Controls_Depth' : arr})
+
         if json_input['data'] == 'State_Depth':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'State_Depth' : arr})
+
         if json_input['data'] == 'Bboxes':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'Bboxes' : arr})
+            
         if json_input['data'] == 'Dvl':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'Dvl' : arr})
+
         if json_input['data'] == 'Imu':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'Imu' : arr})
+
         if json_input['data'] == 'Object':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'Object' : arr})
+
         if json_input['data'] == 'Switches':
-            output.append({'enabled' : 50})
-            output.append({'pingFrequency' : 50})
-            output.append({'filename' : 'String'})
-    return jsonify({'data' : output}), 201
+            arr = []
+            arr.append({'enabled' : 50})
+            arr.append({'pingFrequency' : 50})
+            arr.append({'filename' : 'String'})
+            output.append({'Switches' : arr})
+
+    return jsonify({'data' : arr}), 201
 
 @app.errorhandler(400)
 def invalid(error):
