@@ -58,7 +58,7 @@ def respond():
             arr.append({'filename' : 'String'})
             output.append({'Switches' : arr})
 
-    return jsonify({'data' : arr}), 201
+    return jsonify({'data' : output}), 201
 
 @app.errorhandler(400)
 def invalid(error):
