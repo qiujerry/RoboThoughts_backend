@@ -9,24 +9,34 @@ def respond():
         abort(400)
     output = []
     for json_input in request.json['request']:
-        if json_input['data'] == 'AcousticsCommand':
+        if json_input['data'] == 'Controls_Depth':
+            output.append({'reference' : 50})
+            output.append({'current' : 50})
+            output.append({'error' : 1})
+        if json_input['data'] == 'State_Depth':
             output.append({'enabled' : 50})
             output.append({'pingFrequency' : 50})
             output.append({'filename' : 'String'})
-        if json_input['data'] == 'AcousticsStatus':
-            output.append({'PFPADiff' : 100})
-            output.append({'PFSFDiff' : 100})
-            output.append({'Angle' : 100})
-        if json_input['data'] == 'AlignmentCommand':
-            output.append({'object' : 'String'})
-            output.append({'width_ratio' : 100})
-        if json_input['data'] == 'AttitudeCommand':
-            output.append({'value' : 100})
-            output.append({'node' : 100})
-        if json_input['data'] == 'CalibrateAlignment':
-            output.append({'surge_active' : True})
-            output.append({'PFSFDiff' : 100})
-            output.append({'Angle' : 100})
+        if json_input['data'] == 'Bboxes':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            output.append({'filename' : 'String'})
+        if json_input['data'] == 'Dvl':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            output.append({'filename' : 'String'})
+        if json_input['data'] == 'Imu':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            output.append({'filename' : 'String'})
+        if json_input['data'] == 'Object':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            output.append({'filename' : 'String'})
+        if json_input['data'] == 'Switches':
+            output.append({'enabled' : 50})
+            output.append({'pingFrequency' : 50})
+            output.append({'filename' : 'String'})
     return jsonify({'data' : output}), 201
 
 @app.errorhandler(400)
