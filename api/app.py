@@ -17,10 +17,14 @@ def respond():
             output.append({'Controls_Depth' : arr})
 
         if json_input['data'] == 'State_Depth':
+            f = open('data.txt', 'r')
+            values = f.readlines()
+            f.close()
             arr = []
-            arr.append({'enabled' : 50})
-            arr.append({'pingFrequency' : 50})
-            arr.append({'filename' : 'String'})
+            arr.append({'depth' : values[0]})
+            arr.append({'pressure' : values[1]})
+            arr.append({'temp' : values[2]})
+            arr.append({'altitude' : values[3]})  
             output.append({'State_Depth' : arr})
 
         if json_input['data'] == 'Bboxes':

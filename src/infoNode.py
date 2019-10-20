@@ -25,17 +25,18 @@ def controls_depth_callback(msg):
     reference = msg.reference
     current = msg.current
     error = msg.error
-    f = open('data.txt', 'a+')
-    f.write(reference)
-    f.write(current)
-    f.write(error)
-    f.close()
 
 def state_depth_callback(msg):
     depth = msg.depth
     pressure = msg.pressure
     temp = msg.temp
     altitude = msg.altitude
+    f = open("/home/osu/osu-uwrt/riptide_software/src/riptide_robothoughts/api/data.txt", "w")
+    f.write("%f\n" % depth)
+    f.write("%f\n" % pressure)
+    f.write("%f\n" % temp)
+    f.write('%f\n' % altitude)
+    f.close()
 
 def bboxes_callback(msg):
     top_left = msg.top_left
