@@ -25,6 +25,11 @@ def controls_depth_callback(msg):
     reference = msg.reference
     current = msg.current
     error = msg.error
+    f = open('data.txt', 'a+')
+    f.write(reference)
+    f.write(current)
+    f.write(error)
+    f.close()
 
 def state_depth_callback(msg):
     depth = msg.depth
