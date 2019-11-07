@@ -17,6 +17,11 @@ from std_msgs.msg import String
 
 app = Flask(__name__)
 
+depth
+reference
+temp
+altitude
+
 @app.route('/', methods=['POST'])
 def respond():
     if not request.json or not 'request' in request.json:
