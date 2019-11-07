@@ -20,7 +20,7 @@ depth = None
 reference = None
 temp = None
 altitude = None
-test = 0
+global test = 0
 
 @app.route('/', methods=['POST'])
 def respond():
