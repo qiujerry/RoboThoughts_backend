@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request, abort, make_response
 import rospy
 import rospkg
 import yaml
-
+import robot_data 
 from riptide_msgs.msg import ControlStatus
 from riptide_msgs.msg import Depth
 from riptide_msgs.msg import Dvl
@@ -16,11 +16,6 @@ from darknet_ros_msgs.msg import BoundingBoxes
 from std_msgs.msg import String
 
 app = Flask(__name__)
-depth = None
-reference = None
-temp = None
-altitude = None
-test = 0
 
 @app.route('/', methods=['POST'])
 def respond():
@@ -37,11 +32,10 @@ def respond():
 
         if json_input['data'] == 'State_Depth':
             arr = []
-            global test = 1
-            arr.append({'depth' : global depth})
-            arr.append({'pressure' : global reference})
-            arr.append({'temp' : global temp})
-            arr.append({'altitude' : global altitude})  
+            arr.append({'depth' : robot_data.depth})
+            arr.append({'pressure' : robot_data.reference})
+            arr.append({'temp' : robot_data.temp})
+            arr.append({'altitude' : robot_data.altitude})  
             output.append({'State_Depth' : arr})
 
         if json_input['data'] == 'Bboxes':
@@ -96,10 +90,10 @@ def controls_depth_callback(msg):
     error = msg.error
 
 def state_depth_callback(msg):
-    global depth = msg.depth
-    global pressure = msg.pressure
-    global temp = msg.temp
-    global altitude = msg.altitude
+    robot_data.depth = msg.depth
+    robot_data.pressure = msg.pressure
+    robot_data.temp = msg.temp
+    robot_data.altitude = msg.altitude
 
 def bboxes_callback(msg):
     top_left = msg.top_left
