@@ -35,7 +35,7 @@ def respond():
             values = f.readlines()
             f.close()
             arr = []
-            arr.append({'depth' : global})
+            arr.append({'depth' : global depth})
             arr.append({'pressure' : global reference})
             arr.append({'temp' : global temp})
             arr.append({'altitude' : global altitude})  
