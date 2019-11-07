@@ -16,6 +16,11 @@ from darknet_ros_msgs.msg import BoundingBoxes
 from std_msgs.msg import String
 
 app = Flask(__name__)
+depth = None
+reference = None
+temp = None
+altitude = None
+test = 0
 
 @app.route('/', methods=['POST'])
 def respond():
@@ -31,10 +36,8 @@ def respond():
             output.append({'Controls_Depth' : arr})
 
         if json_input['data'] == 'State_Depth':
-            f = open('data.txt', 'r')
-            values = f.readlines()
-            f.close()
             arr = []
+            x = global test
             arr.append({'depth' : global depth})
             arr.append({'pressure' : global reference})
             arr.append({'temp' : global temp})
@@ -145,8 +148,5 @@ def main():
 
 
 if __name__ == '__main__':
-    depth = None
-    reference = None
-    temp = None
-    altitude = None
+
     app.run(host='0.0.0.0', port=5000)
