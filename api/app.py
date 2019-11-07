@@ -17,10 +17,10 @@ from std_msgs.msg import String
 
 app = Flask(__name__)
 
-depth
-reference
-temp
-altitude
+depth = None
+reference = None
+temp = None
+altitude = None
 
 @app.route('/', methods=['POST'])
 def respond():
