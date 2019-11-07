@@ -1,0 +1,10 @@
+# infoNode_cfg.yml
+# This file defines the topics that infoNode.py wants to subsribe to
+
+controls_depth_topic: /status/controls/depth
+bboxes_topic: /state/bboxes
+state_depth_topic: /state/depth 
+dvl_topic: /state/dvl 
+imu_topic: /state/imu
+object_topic: /state/object
+switches_topic: /state/switches

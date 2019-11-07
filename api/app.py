@@ -12,6 +12,7 @@ from riptide_msgs.msg import Imu
 from riptide_msgs.msg import Object
 from riptide_msgs.msg import SwitchState
 from darknet_ros_msgs.msg import BoundingBoxes
+import os
 
 from std_msgs.msg import String
 
@@ -80,7 +81,7 @@ def invalid(error):
     return make_response(jsonify({'error':'Invalid JSON Request'}), 400)
 
 rpack = rospkg.RosPack()
-config_path = rpack.get_path('riptide_robothoughts') + "/cfg/infoNode_cfg.yaml"
+config_path = os.getcwd() + "infoNode_cfg.yaml"
 pubs = {}
 cfg = {}
 
