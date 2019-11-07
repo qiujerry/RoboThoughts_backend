@@ -20,7 +20,7 @@ depth = None
 reference = None
 temp = None
 altitude = None
-global test = 0
+test = 0
 
 @app.route('/', methods=['POST'])
 def respond():
@@ -37,7 +37,7 @@ def respond():
 
         if json_input['data'] == 'State_Depth':
             arr = []
-            x = global test
+            global test = 1
             arr.append({'depth' : global depth})
             arr.append({'pressure' : global reference})
             arr.append({'temp' : global temp})
