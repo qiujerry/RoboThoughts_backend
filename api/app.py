@@ -17,11 +17,6 @@ from std_msgs.msg import String
 
 app = Flask(__name__)
 
-depth = None
-reference = None
-temp = None
-altitude = None
-
 @app.route('/', methods=['POST'])
 def respond():
     if not request.json or not 'request' in request.json:
@@ -40,8 +35,7 @@ def respond():
             values = f.readlines()
             f.close()
             arr = []
-            x = global depth
-            arr.append({'depth' : x})
+            arr.append({'depth' : global})
             arr.append({'pressure' : global reference})
             arr.append({'temp' : global temp})
             arr.append({'altitude' : global altitude})  
@@ -151,4 +145,8 @@ def main():
 
 
 if __name__ == '__main__':
+    depth = None
+    reference = None
+    temp = None
+    altitude = None
     app.run(host='0.0.0.0', port=5000)
