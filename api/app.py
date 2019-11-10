@@ -34,7 +34,7 @@ def respond():
         if json_input['data'] == 'State_Depth':
             arr = []
             arr.append({'depth' : robot_data.depth})
-            arr.append({'pressure' : robot_data.reference})
+            arr.append({'pressure' : robot_data.pressure})
             arr.append({'temp' : robot_data.temp})
             arr.append({'altitude' : robot_data.altitude})  
             output.append({'State_Depth' : arr})
