@@ -12,6 +12,7 @@ from riptide_msgs.msg import Imu
 from riptide_msgs.msg import Object
 from riptide_msgs.msg import SwitchState
 from darknet_ros_msgs.msg import BoundingBoxes
+from bboxes_callback import bboxes_callback
 import os
 import threading
 
@@ -98,9 +99,9 @@ def state_depth_callback(msg):
     robot_data.altitude = msg.altitude
 
 
-def bboxes_callback(msg):
-    top_left = msg.top_left
-    bottom_right = msg.bottom_right
+#def bboxes_callback(msg):
+ #   top_left = msg.top_left
+  #   bottom_right = msg.bottom_right
 
 def dvl_callback(msg):
     time = msg.time

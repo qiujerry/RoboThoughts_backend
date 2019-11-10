@@ -1,0 +1,6 @@
+global top_left
+
+
+def bboxes_callback(msg):
+    top_left = msg.top_left
+    bottom_right = msg.bottom_right
